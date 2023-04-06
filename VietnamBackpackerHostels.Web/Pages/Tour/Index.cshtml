@@ -55,7 +55,7 @@
 
                             var tripInformationValues = new List<Tuple<string, string>>();
 
-                            bool priceExists = Model.Tour.TourPrices.Any();
+                            bool priceExists = Model.Tour.TourPrices != null && Model.Tour.TourPrices.Any();
                             bool minCapacityExists = Model.Tour.MinCapacity.HasValue;
                             bool maxCapacityExists = Model.Tour.MaxCapacity.HasValue;
                             bool addressExists = !string.IsNullOrEmpty(Model.Tour.Address);
