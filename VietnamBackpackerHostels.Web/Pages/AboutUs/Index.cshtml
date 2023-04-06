@@ -1,0 +1,96 @@
+﻿@page "/about-us"
+@model VietnamBackpackerHostels.Web.Pages.AboutUs.IndexModel
+
+<div class="custom-height mt-n5 py-3 py-lg-5 bg-black">
+    <div class="container py-5">
+        <div class="row my-4">
+            <div class="col-12 has-parallax-scroll">
+                <h1 class="display-4 fw-bold ls-tight text-white">@ViewData["Title"]</h1>
+            </div>
+        </div>
+    </div>
+
+    <img src="https://ik.imagekit.io/rqlzhe7ko/vbh/texture-bottom.png" class="w-100 bottom-0 start-0 position-absolute" style="max-height:18px;" />
+</div>
+
+<!--Section: Locations-->
+<div class="container bg-white rounded-6 position-relative pt-3 px-3 pb-3 custom-mt">
+    <div class="row">
+        <p>In December 2004, two Aussies living in Hanoi converted a former Diplomat's house into Vietnam's first and only international style Backpackers' Hostel. The idea was simple, "Let's make a place where we'd want to stay". So the hostel is kept laidback, safe, clean and social. Now, due to the amazing support of thousands of individual travellers that we have had the privilege of calling our guests and friends, we have grown to include the following locations:</p>
+
+        @Html.DisplayFor(x => x.DestinationsCards)
+
+        <p>We haven't forgotten that it is the people you meet while travelling that make the good times and great memories. So to get the parties started, we have a Happy Hours everyday in all our hostels, as well as nightly drink specials in the bar and restaurant areas. Our friendly and knowledgeable staff on the travel desk will help you make the most of your time in Vietnam by planning local or full country itineraries, all with your customized wants in mind and at an affordable cost.</p>
+
+        <p>If you have any questions about the hostels, our tours or Vietnam itself, please use the contact form in “Get In Touch” to send us your enquries or livechat us now. We will be only too happy to answer your questions. We look forward to meeting you in the near future.</p>
+    </div>
+</div>
+
+<partial name="Shared/_WhyTravelVBHPartial" />
+
+<div class="container-fluid">
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-12 col-lg mb-3 has-parallax-scroll">
+                <div class="card h-100">
+                    <div class="bg-image">
+                        <img src="https://ik.imagekit.io/rqlzhe7ko/vbh/home-8.webp?tr=w-600" class="img-fluid">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-black">City Guides</h5>
+
+                        <div class="card-text">
+                            <p>We want visitors to this wonderful country to experience it to its fullest. There is so much to do, see, eat, and drink. These City Guides are just the beginning.</p>
+                        </div>
+
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-primary align-bottom" href="/about-us/city-guides">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg mb-3 has-parallax-scroll">
+                <div class="card h-100">
+                    <div class="bg-image">
+                        <img src="https://ik.imagekit.io/rqlzhe7ko/vbh/sp_big.webp?tr=w-600" class="img-fluid">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-black">Community</h5>
+
+                        <div class="card-text">
+                            <p>At VBH we're all about working together, building bridges and giving back to the community and our fellow travelers. It's about creating the best experience for everyone involved and fostering amazing new relationships with friends and family in Vietnam and Worldwide.</p>
+                        </div>
+
+
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-primary align-bottom" href="/about-us/community">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg mb-3 has-parallax-scroll">
+                <div class="card h-100">
+                    <div class="bg-image">
+                        <img src="https://ik.imagekit.io/rqlzhe7ko/vbh/home-page-join-our-crew.webp?tr=w-600" class="img-fluid">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-black">Join Our Crew</h5>
+
+                        <div class="card-text">
+                            <p>VBH is always looking for fantastic people to join us for a good time, and a long time. We are planning to keep bringing more red buffalos to more parts of Vietnam. We want visitors to this wonderful country to experience it in our own special way.</p>
+                        </div>
+
+
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-primary align-bottom" href="/about-us/join-our-crew">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="Shared/_DesignYourTripPartial" model="true" />

@@ -1,0 +1,11 @@
+﻿@page "/hostels"
+@model VietnamBackpackerHostels.Web.Pages.Destinations.IndexModel
+
+@Html.DisplayFor(x => x.Cards)
+
+<section id="bookBanner" class="bg-black px-3 px-lg-0 pb-5 pt-5 position-relative">
+    <img src="https://ik.imagekit.io/rqlzhe7ko/vbh/texture-top.png" class="w-100 top-0 left-0 position-absolute" style="max-height:18px;" />
+    @Html.DisplayFor(x => x.BookNowBanner)
+</section>
+
+<partial name="Shared/_DesignYourTripPartial" model="false" />

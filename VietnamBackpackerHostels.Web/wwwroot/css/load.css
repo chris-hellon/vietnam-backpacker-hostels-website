@@ -1,0 +1,24 @@
+﻿.pre-loader {
+    background-color: #000 !important;
+    text-align: center !important;
+    height: 100vh !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    position: fixed !important;
+    z-index: 100000;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center
+}
+
+.spinner-border {
+    border: .25em solid;
+    border-right-color: transparent;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: -.125em;
+    border-radius: 50%;
+    animation: .75s linear infinite spinner-border
+}

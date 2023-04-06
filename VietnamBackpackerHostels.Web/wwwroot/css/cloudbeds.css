@@ -1,0 +1,47 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@font-face {
+    font-family: 'Brandon Printed';
+    src: url('https://travaloud.azureedge.net/vbh/assets/fonts/brandonprinted-two-webfont.woff2') format('woff2'), url('https://travaloud.azureedge.net/vbh/assets/fonts/brandonprinted-two-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+body, p, span, div {
+    font-family: "Roboto",Arial,Helvetica,sans-serif !important;
+    letter-spacing: 2px;
+} 
+
+.btn {
+    font-family: 'Brandon Printed',"Roboto",Arial,Helvetica,sans-serif !important;
+    
+}
+
+.green.btn, .green.btn.disabled {
+    line-height: 2.8rem;
+}
+
+.page-md.page-full-width .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0px;
+}
+
+.page-header-wrap .hotel_name {
+    font-family: 'BrandonPrinted',"Roboto",Arial,Helvetica,sans-serif !important;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 0rem;
+}
+
+.page-header-wrap.navbar {
+    min-height: 36px;
+}
+
+#lang_currency_switchers {
+    margin-right: 0px;
+}
+
+#map_canvas, .property_info .portlet-body .text:first-of-type, .property_info .portlet-body hr:first-of-type {
+    display: none;
+}

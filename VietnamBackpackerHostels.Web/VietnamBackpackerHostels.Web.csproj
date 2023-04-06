@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-VietnamBackpackerHostels.Web-2f241a1d-c383-4df2-9540-55cc237a2943</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Travaloud\Travaloud.Base\Travaloud.Infrastructure\Travaloud.Infrastructure.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Travaloud\Travaloud.Base\Travaloud.Web\Travaloud.Web.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\css\" />
+    <Content Remove="wwwroot\js\" />
+    <Content Remove="wwwroot\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="Pages\Home\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="Pages\Shared\" />
+    <Folder Include="Pages\Destination\" />
+    <Folder Include="Pages\Tour\" />
+    <Folder Include="Pages\TourCategory\" />
+    <Folder Include="Pages\Tour\Shared\" />
+    <Folder Include="wwwroot\img\" />
+    <Folder Include="Pages\Contact\" />
+    <Folder Include="Pages\Explore\" />
+    <Folder Include="Pages\TripsAndTravel\" />
+    <Folder Include="Pages\AboutUs\" />
+    <Folder Include="Pages\TermsAndConditions\" />
+    <Folder Include="Pages\CookiePolicy\" />
+    <Folder Include="Pages\AboutUs\Community\" />
+    <Folder Include="Pages\AboutUs\CityGuides\" />
+    <Folder Include="Pages\AboutUs\JoinOurCrew\Shared\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Pages\Home\" />
+    <None Remove="Pages\Shared\" />
+    <None Remove="Pages\Property\" />
+    <None Remove="Pages\Tour\" />
+    <None Remove="Pages\TourCategory\" />
+    <None Remove="Pages\Tour\Shared\" />
+    <None Remove="Pages\Contact\" />
+    <None Remove="Pages\Explore\" />
+    <None Remove="Pages\TripsAndTravel\" />
+    <None Remove="Pages\AboutUs\" />
+    <None Remove="Pages\TermsAndConditions\" />
+    <None Remove="Pages\CookiePolicy\" />
+    <None Remove="Pages\AboutUs\Community\" />
+    <None Remove="Pages\AboutUs\CityGuides\" />
+    <None Remove="Pages\AboutUs\JoinOurCrew\Shared\" />
+    <None Remove="Utils\" />
+  </ItemGroup>
+</Project>
