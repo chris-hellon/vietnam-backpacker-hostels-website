@@ -36,9 +36,6 @@
     <Folder Include="wwwroot\js\" />
     <Folder Include="Pages\Shared\" />
     <Folder Include="Pages\Destination\" />
-    <Folder Include="Pages\Tour\" />
-    <Folder Include="Pages\TourCategory\" />
-    <Folder Include="Pages\Tour\Shared\" />
     <Folder Include="wwwroot\img\" />
     <Folder Include="Pages\Contact\" />
     <Folder Include="Pages\Explore\" />
@@ -55,9 +52,6 @@
     <None Remove="Pages\Home\" />
     <None Remove="Pages\Shared\" />
     <None Remove="Pages\Property\" />
-    <None Remove="Pages\Tour\" />
-    <None Remove="Pages\TourCategory\" />
-    <None Remove="Pages\Tour\Shared\" />
     <None Remove="Pages\Contact\" />
     <None Remove="Pages\Explore\" />
     <None Remove="Pages\TripsAndTravel\" />

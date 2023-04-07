@@ -44,26 +44,7 @@
     </div>
 </section>
 
-<section id="socials">
-    <div class="container-fluid bg-primary">
-        <div class="container py-4 has-parallax-scroll fade-in">
-            <div class="row align-items-center">
-                <div class="col-lg-2 mb-3 mb-lg-0 text-center text-lg-end">
-                    <!-- Instagram -->
-                    <a class="m-1" href="https://www.instagram.com/vbh_vietnam" target="_blank" role="button"><i class="fab fa-instagram text-white"></i></a>
-                </div>
-                <div class="col-lg-8 mb-3 mb-lg-0 text-center">
-                    <p class="text-white header-font">Follow us to keep up to date with our latest news and events!</p>
-                </div>
-                <div class="col-lg-2 text-center text-lg-start">
-                    <!-- Facebook -->
-                    <a class="m-1" href="https://www.facebook.com/vietnambackpackerhostels" target="_blank" role="button"><i class="fab fa-facebook text-white"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+<partial name="Shared/_SocialsBannerPartial" model="Model" />
 
 <section id="tours" class="container-fluid pb-5 position-relative">
     <div class="container">
@@ -72,3 +53,4 @@
 </section>
 
 <partial name="Shared/_WhyTravelVBHPartial" />
+<partial name="Shared/_DesignYourTripPartial" model="false" />
