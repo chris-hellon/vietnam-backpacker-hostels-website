@@ -39,7 +39,7 @@
             await base.OnGetDataAsync();
 
             CarouselComponent = new FullImageCarouselComponent(await GetHomePageCarouselImages(), new BookNowComponent(Properties, null, true), true);
-            ToursCards = WebComponentsBuilder.UncutTravel.GetToursWithCategoriesFullImageCards(ToursWithCategories, null, null);
+            ToursCards = WebComponentsBuilder.UncutTravel.GetToursWithCategoriesFullImageCards(ToursWithCategories, null, null, false);
             ToursCarousel = WebComponentsBuilder.VietnamBackpackerHostels.GetToursWithCategoriesCarouselCards(PromotedTours);
             DestinationsCards = WebComponentsBuilder.VietnamBackpackerHostels.GetDestinationsCards(Destinations);
             ServicesCarousel = WebComponentsBuilder.VietnamBackpackerHostels.GetServicesCarouselCards(Services);

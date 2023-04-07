@@ -52,11 +52,19 @@ namespace VietnamBackpackerHostels.Web.Pages.Tour
 
             if (Tour != null)
             {
-                var relatedTours = ToursWithCategories.Where(t => t.Id != Tour.Id).ToList();
-                relatedTours.Shuffle();
-                relatedTours = relatedTours.Take(3).ToList();
+                if (ToursWithCategories != null && ToursWithCategories.Any())
+                {
+                    var relatedTours = ToursWithCategories.Where(t => t.Id != Tour.Id).ToList();
 
-                RelatedToursCards = WebComponentsBuilder.UncutTravel.GetToursWithCategoriesGenericCards(relatedTours, null, true);
+                    if (relatedTours != null)
+                    {
+                        relatedTours.Shuffle();
+                        relatedTours = relatedTours.Take(3).ToList();
+
+                        RelatedToursCards = WebComponentsBuilder.UncutTravel.GetToursWithCategoriesGenericCards(relatedTours, null, true);
+                    }
+                }
+
                 Tour.TourPrices = await ToursRepository.GetTourPrices(Tour.Id);
                 Tour.TourItineraries = await ToursRepository.GetTourItineraries(Tour.Id);
                 EnquireNowComponent = new EnquireNowComponent()
