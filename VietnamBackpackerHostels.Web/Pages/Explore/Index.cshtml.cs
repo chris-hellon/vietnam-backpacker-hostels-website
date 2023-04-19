@@ -25,7 +25,7 @@ namespace VietnamBackpackerHostels.Web.Pages.Explore
         public async Task<IActionResult> OnGetAsync()
         {
             await base.OnGetDataAsync();
-            Cards = WebComponentsBuilder.GetToursWithCategoriesPageCategoryComponent(ToursWithCategories);
+            Cards = WebComponentsBuilder.GetToursWithCategoriesPageCategoryComponent(TenantId, ToursWithCategories);
 
             ViewData["Title"] = "Explore";
 

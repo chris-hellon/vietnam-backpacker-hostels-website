@@ -82,7 +82,7 @@
                         BannerImages = new List<string>();
                         for (int i = 0; i < 4; i++)
                         {
-                            BannerImages.Add($"https://ik.imagekit.io/rqlzhe7ko/vbh/hue-banner-{i + 1}.webp?tr=w-800");
+                            BannerImages.Add($"https://travaloudcdn.azureedge.net/vbh/assets/images/hue-banner-{i + 1}.webp?w=800");
                         }
                         break;
                     case "E4DCD399-2CAE-4F7A-9041-0D7A27B52773": // hoi an
@@ -90,12 +90,12 @@
                         BannerImages = new List<string>();
                         for (int i = 0; i < 6; i++)
                         {
-                            BannerImages.Add($"https://ik.imagekit.io/rqlzhe7ko/vbh/hoi-an-banner-{i + 1}.webp?tr=w-800");
+                            BannerImages.Add($"https://travaloudcdn.azureedge.net/vbh/assets/images/hoi-an-banner-{i + 1}.webp?w=800");
                         }
                         break;
                     case "EEBE2058-C696-4C08-9641-062E092A524F":
                   
-                        BannerImages = new List<string>() { "https://ik.imagekit.io/rqlzhe7ko/vbh/hanoi-background-image.webp?tr=w-800" };
+                        BannerImages = new List<string>() { "https://travaloudcdn.azureedge.net/vbh/assets/images/hanoi-background-image.webp?w=800" };
                         break;
                 }
 
