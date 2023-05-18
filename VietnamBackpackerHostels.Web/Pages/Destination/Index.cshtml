@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-4 has-parallax-scroll">
                     @{
-                        var thumbnailImageSrc = Model.DestinationProperty.ImagePath.Replace("tr=w-1000", $"w=1000").Replace($"{Model.TenantId}/", "").Replace("https://ik.imagekit.io/rqlzhe7ko/", $"https://travaloudcdn.azureedge.net/{Model.TenantId}/assets/images/");
+                        var thumbnailImageSrc = Model.DestinationProperty.ImagePath.Replace("tr=w-1000", $"w=1000").Replace($"{Model.TenantId}/", "").Replace("https://ik.imagekit.io/rqlzhe7ko/", $"https://travaloudcdn.azureedge.net/{Model.TenantId}/assets/images/").Replace("https://travaloud.azureedge.net", "https://travaloudcdn.azureedge.net").Replace("https://travaloudcdn.azureedge.net/assets/images/", $"https://travaloudcdn.azureedge.net/{Model.TenantId}/assets/images/"); ;
                         <img src="@thumbnailImageSrc" class="img-fluid rounded-6" width="600" alt="@Model.DestinationProperty.Name" style="opacity:0.32" />
                     }
 

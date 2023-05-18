@@ -15,13 +15,23 @@
         [BindProperty]
         public IEnumerable<JobVacancy> JobVacancies { get; set; }
 
+        private readonly IDapperRepository<JobVacancy> _jobVacanciesRepository;
+
+        public IndexModel(IDapperRepository<JobVacancy> jobVacanciesRepository)
+        {
+            _jobVacanciesRepository = jobVacanciesRepository;
+        }
+
         public async Task<IActionResult> OnGetAsync()
         {
             await base.OnGetDataAsync();
 
             ViewData["Title"] = "Join Our Crew";
 
-            JobVacancies = await JobVacanciesRepository.GetJobVacancies(TenantId);
+            JobVacancies = await _jobVacanciesRepository.GetListAsync("GetJobVacancies", new
+            {
+                TenantId
+            });
 
             return Page();
         }

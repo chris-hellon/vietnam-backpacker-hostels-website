@@ -12,3 +12,4 @@ global using Travaloud.Core.Models;
 global using Travaloud.Core.Entities.Catalog;
 global using Travaloud.Core.Models.WebComponents;
 global using Travaloud.Core.Models.WebComponents.FuseHostelsAndTravel;
+global using Travaloud.Core.Interfaces.Repositories;

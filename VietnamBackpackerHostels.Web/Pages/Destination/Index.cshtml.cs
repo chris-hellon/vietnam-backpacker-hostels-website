@@ -58,18 +58,26 @@
                 ViewData["Title"] = Destination.Name;
                 ViewData["SubTitle"] = "Hostels";
 
-                DestinationProperties = await DestinationsRepository.GetDestinationProperties(Destination.Id, TenantId);
-                DestinationProperty = await PropertiesRepository.GetProperty(TenantId, DestinationProperties.First().Id);
-                await PropertiesRepository.GetPropertyInformation(DestinationProperty);
+                DestinationProperties = await PropertyRepository.GetListAsync("GetDestinationProperties", new
+                {
+                    TenantId,
+                    DestinationId = Destination.Id
+                });
+                DestinationProperty = await PropertyRepository.GetSingleAsync("GetProperties", new
+                {
+                    TenantId,
+                    Id = DestinationProperties.First().Id
+                });
+
+                await SetPropertyInformation(DestinationProperty);
+
                 BookNowComponent = new BookNowComponent(Properties, DestinationProperty.Id, false);
 
                 if (DestinationProperty.Tours != null && DestinationProperty.Tours.Any())
                 {
-                    var tourPrices = await ToursRepository.GetTourPrices(null, DestinationProperty.Tours.Select(x => x.Id).ToList());
-
                     DestinationProperty.Tours = DestinationProperty.Tours.Select(x =>
                     {
-                        x.TourPrices = tourPrices.Where(tp => tp.TourId == x.Id);
+                        x.TourPrices = TourPrices.Where(tp => tp.TourId == x.Id);
                         return x;
                     });
                     ToursCarousel = WebComponentsBuilder.VietnamBackpackerHostels.GetToursCarouselCards(DestinationProperty.Tours, "", $"Tours In {Destination.Name}");
