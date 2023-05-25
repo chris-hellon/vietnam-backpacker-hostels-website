@@ -13,14 +13,7 @@
         }
 
         [BindProperty]
-        public IEnumerable<JobVacancy> JobVacancies { get; set; }
-
-        private readonly IDapperRepository<JobVacancy> _jobVacanciesRepository;
-
-        public IndexModel(IDapperRepository<JobVacancy> jobVacanciesRepository)
-        {
-            _jobVacanciesRepository = jobVacanciesRepository;
-        }
+        public IEnumerable<JobVacancyDto> JobVacancies { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -28,10 +21,7 @@
 
             ViewData["Title"] = "Join Our Crew";
 
-            JobVacancies = await _jobVacanciesRepository.GetListAsync("GetJobVacancies", new
-            {
-                TenantId
-            });
+            JobVacancies = await ApplicationRepository.GetJobVacanciesAsync(TenantId);
 
             return Page();
         }

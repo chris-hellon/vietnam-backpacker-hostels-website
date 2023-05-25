@@ -47,18 +47,34 @@
             return Page();
         }
 
-        public async Task<List<Image>> GetHomePageCarouselImages()
+        public async Task<List<ImageDto>> GetHomePageCarouselImages()
         {
-            var images = new List<Image>();
+            var images = new List<ImageDto>();
 
             await Task.Run(() =>
             {
-                images = new List<Image>()
+                images = new List<ImageDto>()
                 {
-                    new Image("https://travaloudcdn.azureedge.net/vbh/assets/images/home-5.webp?w=2000", new Guid("F28C2D2C-1C90-40A5-B13E-31D323C14E1E"), "Page", null, null, null, null, "<div class=\"text-center text-white\"><h1 class=\"display-1 lh-1 m-0 p-0 fs-1 text-white\">Vietnam</h1><h2 class=\"mb-0 mt-n3 fs-4 text-white\">Backpacker Hostels</h2><small class=\"text-end mt-n2 me-1 mb-4 header-font d-block\">est. 2004</small> <h4 class=\"mb-4 text-white\">#MORETHANJUSTABED</h4></div>"),
-                    new Image("https://travaloudcdn.azureedge.net/vbh/assets/images/home-8.webp?w=2000", new Guid("F28C2D2C-1C90-40A5-B13E-31D323C14E1E"), "Page", null, null, null, null, "<div class=\"text-center text-white\"><h1 class=\"display-1 lh-1 m-0 p-0 fs-1 text-white\">Vietnam</h1><h2 class=\"mb-0 mt-n3 fs-4 text-white\">Backpacker Hostels</h2><small class=\"text-end mt-n2 me-1 mb-4 header-font d-block\">est. 2004</small> <h4 class=\"mb-4 text-white\">#MORETHANJUSTABED</h4></div>"),
-                    new Image("https://travaloudcdn.azureedge.net/vbh/assets/images/hoi-an-banner-3.webp?w=2000", new Guid("F28C2D2C-1C90-40A5-B13E-31D323C14E1E"), "Page", null, null, null, null, "<div class=\"text-center text-white\"><h1 class=\"display-1 lh-1 m-0 p-0 fs-1 text-white\">Vietnam</h1><h2 class=\"mb-0 mt-n3 fs-4 text-white\">Backpacker Hostels</h2><small class=\"text-end mt-n2 me-1 mb-4 header-font d-block\">est. 2004</small> <h4 class=\"mb-4 text-white\">#MORETHANJUSTABED</h4></div>"),
-                    new Image("https://travaloudcdn.azureedge.net/vbh/assets/images/hue-banner-2.webp?w=2000", new Guid("F28C2D2C-1C90-40A5-B13E-31D323C14E1E"), "Page", null, null, null, null, "<div class=\"text-center text-white\"><h1 class=\"display-1 lh-1 m-0 p-0 fs-1 text-white\">Vietnam</h1><h2 class=\"mb-0 mt-n3 fs-4 text-white\">Backpacker Hostels</h2><small class=\"text-end mt-n2 me-1 mb-4 header-font d-block\">est. 2004</small> <h4 class=\"mb-4 text-white\">#MORETHANJUSTABED</h4></div>")
+                    new ImageDto()
+                    {
+                        ImagePath = "https://travaloudcdn.azureedge.net/vbh/assets/images/home-5.webp?w=2000",
+                        Html = "<div class=\"text-center text-white\"><h1 class=\"display-1 lh-1 m-0 p-0 fs-1 text-white\">Vietnam</h1><h2 class=\"mb-0 mt-n3 fs-4 text-white\">Backpacker Hostels</h2><small class=\"text-end mt-n2 me-1 mb-4 header-font d-block\">est. 2004</small> <h4 class=\"mb-4 text-white\">#MORETHANJUSTABED</h4></div>"
+                    },
+                    new ImageDto()
+                    {
+                        ImagePath = "https://travaloudcdn.azureedge.net/vbh/assets/images/home-8.webp?w=2000",
+                        Html = "<div class=\"text-center text-white\"><h1 class=\"display-1 lh-1 m-0 p-0 fs-1 text-white\">Vietnam</h1><h2 class=\"mb-0 mt-n3 fs-4 text-white\">Backpacker Hostels</h2><small class=\"text-end mt-n2 me-1 mb-4 header-font d-block\">est. 2004</small> <h4 class=\"mb-4 text-white\">#MORETHANJUSTABED</h4></div>"
+                    },
+                    new ImageDto()
+                    {
+                        ImagePath = "https://travaloudcdn.azureedge.net/vbh/assets/images/hoi-an-banner-3.webp?w=2000",
+                        Html = "<div class=\"text-center text-white\"><h1 class=\"display-1 lh-1 m-0 p-0 fs-1 text-white\">Vietnam</h1><h2 class=\"mb-0 mt-n3 fs-4 text-white\">Backpacker Hostels</h2><small class=\"text-end mt-n2 me-1 mb-4 header-font d-block\">est. 2004</small> <h4 class=\"mb-4 text-white\">#MORETHANJUSTABED</h4></div>"
+                    },
+                    new ImageDto()
+                    {
+                        ImagePath = "https://travaloudcdn.azureedge.net/vbh/assets/images/hue-banner-2.webp?w=2000",
+                        Html = "<div class=\"text-center text-white\"><h1 class=\"display-1 lh-1 m-0 p-0 fs-1 text-white\">Vietnam</h1><h2 class=\"mb-0 mt-n3 fs-4 text-white\">Backpacker Hostels</h2><small class=\"text-end mt-n2 me-1 mb-4 header-font d-block\">est. 2004</small> <h4 class=\"mb-4 text-white\">#MORETHANJUSTABED</h4></div>"
+                    }
                 };
             });
 

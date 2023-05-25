@@ -1,5 +1,4 @@
-﻿using Travaloud.Infrastructure.Utils;
-using VietnamBackpackerHostels.Web.Utils;
+﻿using Travaloud.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -10,7 +9,5 @@ builder.Services.AddTravaloudServices(configuration, builder.Environment);
 var app = builder.Build();
 
 app.ConfigureTravaloudApp(app.Environment);
-app.AddUrlRedirects();
 app.MapRazorPages();
 app.Run();
-

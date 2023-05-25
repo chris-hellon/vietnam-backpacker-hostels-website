@@ -30,29 +30,21 @@ namespace VietnamBackpackerHostels.Web.Pages.TripsAndTravel
         [BindProperty]
         public GenericCardsComponent DestinationsCards { get; private set; }
 
-        private readonly IDapperRepository<TourWithCategory> _toursWithCategoriesRepository;
-
-        public IndexModel(IDapperRepository<TourWithCategory> toursWithCategoriesRepository)
-        {
-            _toursWithCategoriesRepository = toursWithCategoriesRepository;
-        }
-
         public async Task<IActionResult> OnGetAsync()
         {
             await OnGetDataAsync();
 
-            var tours = await _toursWithCategoriesRepository.GetListAsync("GetTopLevelToursWithCategories", new
-            {
-                TenantId
-            });
+            var tours = await ApplicationRepository.GetTopLevelToursWithCategoriesAsync(TenantId);
+            var tourIds = tours.Select(x => x.Id);
+            var tourPrices = Tours.Where(x => tourIds.Contains(x.Id)).SelectMany(x => x.TourPrices);
 
             tours = tours.Select(x =>
             {
-                x.TourPrices = TourPrices.Where(tp => tp.TourId == x.Id);
+                x.TourPrices = tourPrices.Where(tp => tp.TourId == x.Id).ToList();
                 return x;
             });
 
-            SetToursPrices(tours, Tours.SelectMany(x => x.TourPrices), ToursWithCategories);
+            SetToursPrices(tours, tourPrices, ToursWithCategories);
 
             var pageSortings = PageSortings.Where(x => x.PageId == PageId());
 

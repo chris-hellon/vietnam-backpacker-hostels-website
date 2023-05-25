@@ -27,13 +27,13 @@
         }
 
         [BindProperty]
-        public Travaloud.Core.Entities.Catalog.Destination Destination { get; private set; }
+        public DestinationDto Destination { get; private set; }
 
         [BindProperty]
-        public IEnumerable<Travaloud.Core.Entities.Catalog.Property> DestinationProperties { get; private set; }
+        public IEnumerable<PropertyDto> DestinationProperties { get; private set; }
 
         [BindProperty]
-        public Travaloud.Core.Entities.Catalog.Property DestinationProperty { get; private set; }
+        public PropertyDetailsDto DestinationProperty { get; private set; }
 
         [BindProperty]
         public BookNowComponent BookNowComponent { get; private set; } = null;
@@ -58,29 +58,16 @@
                 ViewData["Title"] = Destination.Name;
                 ViewData["SubTitle"] = "Hostels";
 
-                DestinationProperties = await PropertyRepository.GetListAsync("GetDestinationProperties", new
-                {
-                    TenantId,
-                    DestinationId = Destination.Id
-                });
-                DestinationProperty = await PropertyRepository.GetSingleAsync("GetProperties", new
-                {
-                    TenantId,
-                    Id = DestinationProperties.First().Id
-                });
-
-                await SetPropertyInformation(DestinationProperty);
+                DestinationProperties = await ApplicationRepository.GetDestinationPropertiesAsync(Destination.Id, TenantId);
+                DestinationProperty = await ApplicationRepository.GetPropertyWithDetailsAsync(DestinationProperties.First().Id);
 
                 BookNowComponent = new BookNowComponent(Properties, DestinationProperty.Id, false);
 
                 if (DestinationProperty.Tours != null && DestinationProperty.Tours.Any())
                 {
-                    DestinationProperty.Tours = DestinationProperty.Tours.Select(x =>
-                    {
-                        x.TourPrices = TourPrices.Where(tp => tp.TourId == x.Id);
-                        return x;
-                    });
-                    ToursCarousel = WebComponentsBuilder.VietnamBackpackerHostels.GetToursCarouselCards(DestinationProperty.Tours, "", $"Tours In {Destination.Name}");
+                    var tourIds = DestinationProperty.Tours.Select(x => x.Id);
+
+                    ToursCarousel = WebComponentsBuilder.VietnamBackpackerHostels.GetToursCarouselCards(Tours.Where(x => tourIds.Contains(x.Id)), "", $"Tours In {Destination.Name}");
                 }
 
                 switch (DestinationProperty.Id.ToString().ToUpper())

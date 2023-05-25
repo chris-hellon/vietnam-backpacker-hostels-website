@@ -13,16 +13,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.14" />
+    <PackageReference Include="Wangkanai.Detection" Version="7.3.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Travaloud\Travaloud.Base\Travaloud.Infrastructure\Travaloud.Infrastructure.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Travaloud\Travaloud.Base\Travaloud.Web\Travaloud.Web.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
     <Content Remove="wwwroot\css\" />
@@ -62,5 +55,16 @@
     <None Remove="Pages\AboutUs\CityGuides\" />
     <None Remove="Pages\AboutUs\JoinOurCrew\Shared\" />
     <None Remove="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Travaloud\Travaloud.Base\Travaloud.Web\Travaloud.Web.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Travaloud\Travaloud.Base\Travaloud.Infrastructure\Travaloud.Infrastructure.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Travaloud\Travaloud.Base\Travaloud.Application\Travaloud.Application.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>
