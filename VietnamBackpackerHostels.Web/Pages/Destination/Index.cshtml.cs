@@ -1,4 +1,5 @@
-﻿namespace VietnamBackpackerHostels.Web.Pages.Destination
+﻿using Travaloud.Core.Extensions;
+namespace VietnamBackpackerHostels.Web.Pages.Destination
 {
 	public class IndexModel : TravaloudBasePageModel
     {
@@ -70,29 +71,38 @@
                     ToursCarousel = WebComponentsBuilder.VietnamBackpackerHostels.GetToursCarouselCards(Tours.Where(x => tourIds.Contains(x.Id)), "", $"Tours In {Destination.Name}");
                 }
 
-                switch (DestinationProperty.Id.ToString().ToUpper())
+                if (DestinationProperty.Images.Any())
                 {
-                    case "28A70CA0-1D20-4880-9737-21AD1DFFEA82": // hue
-
-                        BannerImages = new List<string>();
-                        for (int i = 0; i < 4; i++)
-                        {
-                            BannerImages.Add($"https://travaloudcdn.azureedge.net/vbh/assets/images/hue-banner-{i + 1}.webp?w=800");
-                        }
-                        break;
-                    case "E4DCD399-2CAE-4F7A-9041-0D7A27B52773": // hoi an
-
-                        BannerImages = new List<string>();
-                        for (int i = 0; i < 6; i++)
-                        {
-                            BannerImages.Add($"https://travaloudcdn.azureedge.net/vbh/assets/images/hoi-an-banner-{i + 1}.webp?w=800");
-                        }
-                        break;
-                    case "EEBE2058-C696-4C08-9641-062E092A524F":
-                  
-                        BannerImages = new List<string>() { "https://travaloudcdn.azureedge.net/vbh/assets/images/hanoi-background-image.webp?w=800" };
-                        break;
+                    BannerImages = DestinationProperty.Images.Select(x => x.ImagePath.FormatImageUrl(800, "vbh")).ToList();
                 }
+                else
+                {
+                    switch (DestinationProperty.Id.ToString().ToUpper())
+                    {
+                        case "28A70CA0-1D20-4880-9737-21AD1DFFEA82": // hue
+
+                            BannerImages = new List<string>();
+                            for (int i = 0; i < 4; i++)
+                            {
+                                BannerImages.Add($"https://travaloudcdn.azureedge.net/vbh/assets/images/hue-banner-{i + 1}.webp?w=800");
+                            }
+                            break;
+                        case "E4DCD399-2CAE-4F7A-9041-0D7A27B52773": // hoi an
+
+                            BannerImages = new List<string>();
+                            for (int i = 0; i < 6; i++)
+                            {
+                                BannerImages.Add($"https://travaloudcdn.azureedge.net/vbh/assets/images/hoi-an-banner-{i + 1}.webp?w=800");
+                            }
+                            break;
+                        case "EEBE2058-C696-4C08-9641-062E092A524F":
+
+                            BannerImages = new List<string>() { "https://travaloudcdn.azureedge.net/vbh/assets/images/hanoi-background-image.webp?w=800" };
+                            break;
+                    }
+
+                }
+
 
                 if (BannerImages != null && BannerImages.Any())
                     ImagesCarousel = new CarouselComponent("hostelBannerImages", BannerImages, true);
